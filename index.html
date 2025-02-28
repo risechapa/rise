@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa RISE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Por favor, responda a nossa pequisa de campo abaixo:</h2>
+    <div class="form-container">
+        <form action="https://formspree.io/f/manqrnel" method="POST" onsubmit="return redirect()">
+            <div class="form-group">
+                <label for="ano">Em qual ano você está?</label>
+                <input type="text" id="ano" name="ano">
+            </div>
+            <div class="form-group">
+                <label for="curso">Seu Curso?</label>
+                <input type="text" id="curso" name="curso">
+            </div>
+            <div class="form-group">
+                <label for="eventos">O que você acha dos eventos da escola de maneira geral?</label>
+                <input type="text" id="eventos" name="eventos">
+            </div>
+            <div class="form-group">
+                <label for="interclasse">O que você achou das Olimpíadas? Explique</label>
+                <input type="text" id="interclasse" name="interclasse">
+            </div>
+            <div class="form-group">
+                <label for="junina">O que você achou da festa junina? Explique</label>
+                <input type="text" id="junina" name="junina">
+            </div>
+            <div class="form-group">
+                <label for="cps">O que você achou da Semana Paulo Freire? Explique</label>
+                <input type="text" id="cps" name="cps">
+            </div>
+            <div class="form-group">
+                <label for="feira">E o que você achou da Feira de Ciências? Explique</label>
+                <input type="text" id="feira" name="feira">
+            </div>
+            <div class="form-group">
+                <label for="message">E por último, o que você gostaria que o próximo Grêmio Estudantil fizesse para agregar na escola? Alguma ideia?</label>
+                <textarea id="message" name="message"></textarea>
+            </div>
+            <input type="submit" value="Enviar">
+
+            <script>
+                function redirect() {
+                    setTimeout(function() {
+                        window.location.href = 'rise.html';
+                    }, 50);
+                    return true;
+                }
+                </script>
+        </form>
+    </div>
+
+        </script>
+        
+
+</body>
+</html>
