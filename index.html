@@ -12,31 +12,38 @@
         <form action="https://formspree.io/f/manqrnel" method="POST" onsubmit="return redirect()">
             <div class="form-group">
                 <label for="ano">Em qual ano você está?</label>
-                <input type="text" id="ano" name="ano">
+                <select id="ano" name="ano" onchange="mostrarPerguntas()">
+                    <option value="">Selecione...</option>
+                    <option value="First">1º Ano</option>
+                    <option value="Second">2º Ano</option>
+                    <option value="Third">3º Ano</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="curso">Seu Curso?</label>
                 <input type="text" id="curso" name="curso">
             </div>
-            <div class="form-group">
-                <label for="eventos">O que você acha dos eventos da escola de maneira geral?</label>
-                <input type="text" id="eventos" name="eventos">
-            </div>
-            <div class="form-group">
-                <label for="interclasse">O que você achou das Olimpíadas? Explique</label>
-                <input type="text" id="interclasse" name="interclasse">
-            </div>
-            <div class="form-group">
-                <label for="junina">O que você achou da festa junina? Explique</label>
-                <input type="text" id="junina" name="junina">
-            </div>
-            <div class="form-group">
-                <label for="cps">O que você achou da Semana Paulo Freire? Explique</label>
-                <input type="text" id="cps" name="cps">
-            </div>
-            <div class="form-group">
-                <label for="feira">E o que você achou da Feira de Ciências? Explique</label>
-                <input type="text" id="feira" name="feira">
+            <div class="hidden" id="aditional-group">
+                <div class="css-aditional">
+                    <label for="eventos">O que você acha dos eventos da escola de maneira geral?</label>
+                    <input type="text" id="eventos" name="eventos">
+                </div>
+                <div class="css-aditional">
+                    <label for="interclasse">O que você achou das Olimpíadas? Explique</label>
+                    <input type="text" id="interclasse" name="interclasse">
+                </div>
+                <div class="css-aditional">
+                    <label for="junina">O que você achou da festa junina? Explique</label>
+                    <input type="text" id="junina" name="junina">
+                </div>
+                <div class="css-aditional">
+                    <label for="cps">O que você achou da Semana Paulo Freire? Explique</label>
+                    <input type="text" id="cps" name="cps">
+                </div>
+                <div class="css-aditional">
+                    <label for="feira">E o que você achou da Feira de Ciências? Explique</label>
+                    <input type="text" id="feira" name="feira">
+                </div>
             </div>
             <div class="form-group">
                 <label for="message">E por último, o que você gostaria que o próximo Grêmio Estudantil fizesse para agregar na escola? Alguma ideia?</label>
@@ -51,12 +58,18 @@
                     }, 50);
                     return true;
                 }
+                function mostrarPerguntas() {
+            const ano = document.getElementById("ano").value;
+            const additionalQuestions = document.getElementById("aditional-group");
+
+            if (ano === "First" || "") {
+                additionalQuestions.classList.add("hidden");
+            } else {
+                additionalQuestions.classList.remove("hidden");
+            }
+        }
                 </script>
         </form>
     </div>
-
-        </script>
-        
-
 </body>
 </html>
