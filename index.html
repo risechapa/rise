@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label for="ano">Em qual ano você está?</label>
                 <select id="ano" name="ano" onchange="mostrarPerguntas()">
-                    <option value="">Selecione...</option>
+                    <option value="select">Selecione...</option>
                     <option value="First">1º Ano</option>
                     <option value="Second">2º Ano</option>
                     <option value="Third">3º Ano</option>
@@ -59,16 +59,15 @@
                     return true;
                 }
                 function mostrarPerguntas() {
-            const ano = document.getElementById("ano").value;
-            const additionalQuestions = document.getElementById("aditional-group");
-
-            if (ano === "First" || "") {
-                additionalQuestions.classList.add("hidden");
-            } else {
-                additionalQuestions.classList.remove("hidden");
-            }
-        }
-                </script>
+                    const ano = document.getElementById("ano").value;
+                    const additionalQuestions = document.getElementById("aditional-group");
+                    if (ano === "First" || ano === "select") {
+                        additionalQuestions.classList.add("hidden");
+                    } else {
+                        additionalQuestions.classList.remove("hidden");
+                    }
+                }
+            </script>
         </form>
     </div>
 </body>
