@@ -12,21 +12,25 @@
         <form action="https://formspree.io/f/manqrnel" method="POST" onsubmit="return redirect()">
             <div class="form-group">
                 <label for="ano">Em qual ano você está?</label>
-                <select id="ano" name="ano" onchange="mostrarPerguntas()">
+                <select id="ano" name="ano" onforminput="selectInput()">
                     <option value="select">Selecione...</option>
-                    <option value="First">1º Ano</option>
-                    <option value="Second">2º Ano</option>
-                    <option value="Third">3º Ano</option>
+                    <option value="1">1º Ano</option>
+                    <option value="2">2º Ano</option>
+                    <option value="3">3º Ano</option>
                 </select>
+
+                <input type="text" id="submitAno" name="submitAno" class="hidden">
+                <input type="text" id="submitAcoes" name="submitAcoes" class="hidden">
             </div>
             <div class="form-group">
-                <label for="curso">Seu Curso?</label>
-                <input type="text" id="curso" name="curso">
+                <label for="acoes">Seu Curso?</label>
+                <input type="checkbox" id="acoes" name="acoes" onforminput="acoesInput()" value="teste">
             </div>
             <div class="hidden" id="aditional-group">
                 <div class="css-aditional">
-                    <label for="eventos">O que você acha dos eventos da escola de maneira geral?</label>
-                    <input type="text" id="eventos" name="eventos">
+                    <label for="acoes">O que você acha dos eventos da escola de maneira geral?</label>
+                    <input type="checkbox" id="acoes" name="acoes" onforminput="acoesInput()">
+                    
                 </div>
                 <div class="css-aditional">
                     <label for="interclasse">O que você achou das Olimpíadas? Explique</label>
@@ -58,14 +62,25 @@
                     }, 50);
                     return true;
                 }
-                function mostrarPerguntas() {
-                    const ano = document.getElementById("ano").value;
-                    const additionalQuestions = document.getElementById("aditional-group");
-                    if (ano === "First" || ano === "select") {
-                        additionalQuestions.classList.add("hidden");
-                    } else {
-                        additionalQuestions.classList.remove("hidden");
-                    }
+                function selectInput() {
+
+                    const select = document.getElementById("ano");
+                    const submitSelect = document.getElementById("submitAno");
+                    
+                    var valueSelect = select.value;
+
+                    submitSelect.value = valueSelect;
+
+                }
+                function acoesInput() {
+
+                    const select = document.getElementById("acoes");
+                    const submitSelect = document.getElementById("submitAcoes");
+
+                    var valueSelect = select.value;
+
+                    submitSelect.value = valueSelect;
+
                 }
             </script>
         </form>
