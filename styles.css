@@ -21,6 +21,7 @@ h2 {
     margin: 10px 0;
 }
 
+
 .form-container {
     background-color: #ffffff;
     padding: 30px;
@@ -34,28 +35,38 @@ h2 {
 }
 
 .form-container:hover {
-    transform: scale(1.02);
+    transform: scale(1.01);
 }
 
+
 .form-group, .css-aditional {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
+
+.form-group p{
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 5px;
+    margin-bottom: 27px;
+}
+
+
 
 .form-group label, .form-group legend {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: 600;
-    color: #4a4a4a;
-    font-size: 16px;
+    color: #727272;
+    font-size: 14px;
 }
 
 .css-aditional label, .form-group legend {
+    font-size: 18px;
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #4a4a4a;
-    font-size: 16px;
+    color: black;
+;
 }
+
 
 .form-group input {
     all: unset;
@@ -63,25 +74,39 @@ h2 {
     width: 20px;
     height: 20px;
     display: inline-block;
-    box-shadow: -1px 2px 2px black;
+
 }
 
 .form-group input[type="radio"] {
     border-radius: 50%;
+    margin-top: 15px;
+    width: 22px;
+    height: 22px;
 }
 
 .form-group input[type="checkbox"] {
     border-radius: 25%;
+    margin-top: 15px;
+
+}
+
+.form-group input[type="checkbox"] {
+    border-radius: 25%;
+    margin-top: 15px;
+    width: 22px;
+    height: 22px;
 }
 
 .form-group input:checked {
-    background-color: rgba(55, 196, 248, 0.511);
-    width: 20px;
-    height: 20px;
+    background-color: #682784;
+    width: 22px;
+    height: 22px;
 }
 
+  
+
 .empty {
-    border: 2px solid red !important;
+    border: 2px solid rgb(180, 0, 0) !important;
 }
 
 .form-group textarea {
@@ -156,6 +181,7 @@ input[type="submit"]:hover {
 
 label p, legend p {
     color: rgb(255, 60, 0);
+
 }
 
 .opcional {
@@ -187,9 +213,15 @@ label p, legend p {
         padding: 16px;
     }
 
-    .form-group label, .form-group input, .form-group textarea, .form-group legend {
-        font-size: 16px;
-        padding: 12px;
+
+    .form-group label {
+            font-size: 16px;
+            padding: 12px;
+        }
+
+    .css-aditional, .form-group input, .form-group textarea, .form-group legend {
+        font-size: 18px;
+
     }
 }
 
@@ -204,11 +236,18 @@ label p, legend p {
         padding: 14px;
     }
 
-    .form-group label, .form-group input, .form-group textarea, .form-group legend {
-        font-size: 14px;
-        padding: 10px;
-    }
+        .form-group label {
+            font-size: 16px;
+            padding: 12px;
+        }
+
+    .css-aditional, .form-group input, .form-group textarea, .form-group legend {
+    font-size: 18px;
+
 }
+}
+
+
 
 img {
     display: block;
