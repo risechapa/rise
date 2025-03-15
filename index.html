@@ -7,81 +7,283 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Por favor, responda a nossa pequisa de campo abaixo:</h2>
+    <h2>Por favor, responda à nossa pequisa de campo abaixo:</h2>
     <div class="form-container">
-        <form action="https://formspree.io/f/manqrnel" method="POST" onsubmit="return redirect()">
+        <form action="https://formspree.io/f/manqrnel" method="POST" id="pesquisaCampo">
             <div class="form-group">
-                <label for="ano">Em qual ano você está?</label>
-                <select id="ano" name="ano" onforminput="selectInput()">
+                <label for="ano">Em qual ano você está? <p>* Obrigatório *</p> </label>
+                <select id="ano" name="ano" onchange="nonEmpty(this)">
                     <option value="select">Selecione...</option>
                     <option value="1">1º Ano</option>
                     <option value="2">2º Ano</option>
                     <option value="3">3º Ano</option>
                 </select>
 
-                <input type="text" id="submitAno" name="submitAno" class="hidden">
-                <input type="text" id="submitAcoes" name="submitAcoes" class="hidden">
             </div>
             <div class="form-group">
-                <label for="acoes">Seu Curso?</label>
-                <input type="checkbox" id="acoes" name="acoes" onforminput="acoesInput()" value="teste">
+                <label for="curso">Em qual curso você está? <p>* Obrigatório *</p> </label>
+                <select id="curso" name="curso" onchange="nonEmpty(this)">
+                    <option value="select">Selecione...</option>
+                    <option value="dsem">Desenvolvimento de Sistemas</option>
+                    <option value="lgem">Logística</option>
+                    <option value="ctem">Contabilidade</option>
+                    <option value="quem">Química</option>
+                    <option value="frem">Farmácia</option>
+                </select>
+
             </div>
-            <div class="hidden" id="aditional-group">
-                <div class="css-aditional">
-                    <label for="acoes">O que você acha dos eventos da escola de maneira geral?</label>
-                    <input type="checkbox" id="acoes" name="acoes" onforminput="acoesInput()">
-                    
-                </div>
-                <div class="css-aditional">
-                    <label for="interclasse">O que você achou das Olimpíadas? Explique</label>
-                    <input type="text" id="interclasse" name="interclasse">
-                </div>
-                <div class="css-aditional">
-                    <label for="junina">O que você achou da festa junina? Explique</label>
-                    <input type="text" id="junina" name="junina">
-                </div>
-                <div class="css-aditional">
-                    <label for="cps">O que você achou da Semana Paulo Freire? Explique</label>
-                    <input type="text" id="cps" name="cps">
-                </div>
-                <div class="css-aditional">
-                    <label for="feira">E o que você achou da Feira de Ciências? Explique</label>
-                    <input type="text" id="feira" name="feira">
-                </div>
-            </div>
+
             <div class="form-group">
-                <label for="message">E por último, o que você gostaria que o próximo Grêmio Estudantil fizesse para agregar na escola? Alguma ideia?</label>
-                <textarea id="message" name="message"></textarea>
+
+                <legend>Como você avalia a importância das ações sociais promovidas pelo grêmio? <p>* Obrigatório *</p> </legend>
+                    <input type="radio" id="muitoImportante" name="acoes" value="muitoImportante" onchange="nonEmpty(this)">
+                    <label for="muitoImportante">Muito Importante</label>
+
+                    <input type="radio" id="importante" name="acoes" value="importante" onchange="nonEmpty(this)">
+                    <label for="importante">Importante</label>
+
+                    <input type="radio" id="neutro" name="acoes" value="neutro" onchange="nonEmpty(this)">
+                    <label for="neutro">Neutro</label>
+
+                    <input type="radio" id="poucoImportante" name="acoes" value="poucoImportante" onchange="nonEmpty(this)">
+                    <label for="poucoImportante">Pouco Importante</label>
+
+                    <input type="radio" id="nadaImportante" name="acoes" value="nadaImportante" onchange="nonEmpty(this)">
+                    <label for="nadaImportante">Nada Importante</label>
+
             </div>
+
+            <div class="form-group">
+            
+                <legend>Quais temas você gostaria que a próxima gestão do grêmio abordasse? <p>* Obrigatório *</p> </legend>
+                <input type="checkbox" id="educacao" name="temas" value="educacao" onchange="nonEmpty(this)">
+                <label for="educacao">Educação</label>
+            
+                <input type="checkbox" id="meioAmbiente" name="temas" value="meioAmbiente" onchange="nonEmpty(this)">
+                <label for="meioAmbiente">Meio ambiente</label>
+            
+                <input type="checkbox" id="cultura" name="temas" value="cultura" onchange="nonEmpty(this)">
+                <label for="cultura">Cultura</label>
+            
+                <input type="checkbox" id="esporte" name="temas" value="esporte" onchange="nonEmpty(this)">
+                <label for="esporte">Esporte</label>
+            
+                <input type="checkbox" id="saudeMental" name="temas" value="saudeMental" onchange="nonEmpty(this)">
+                <label for="saudeMental">Saúde Mental</label>
+
+                <input type="checkbox" id="outroTemas" name="temas" value="outroTemas" oninput="showText(this)" onchange="nonEmpty(this)">
+                <label for="outroTemas">Outro (Especifique)</label>
+                <textarea id="temasText" name="temasText" class="hidden" placeholder="Digite sua resposta"></textarea>
+            
+            </div>
+
+            <div class="form-group">
+            
+                <legend>Você se sentiria incentivado a participar mais ativamente se houvesse uma melhor comunicação das atividades do grêmio? <p>* Obrigatório *</p> </legend>
+                <input type="radio" id="simComunicacao" name="comunicacao" value="simComunicacao" onchange="nonEmpty(this)">
+                <label for="simComunicacao">Sim</label>
+            
+                <input type="radio" id="naoComunicacao" name="comunicacao" value="naoComunicacao" onchange="nonEmpty(this)">
+                <label for="naoComunicacao">Não</label>
+            
+            </div>
+
+            <div class="form-group">
+            
+                <legend>O que motivaria você a participar mais ativamente das atividades do grêmio? <p>* Obrigatório *</p> </legend>
+                <input type="checkbox" id="melhorDivulgacao" name="atividade" value="melhorDivulgacao" onchange="nonEmpty(this)">
+                <label for="melhorDivulgacao">Melhor divulgação</label>
+            
+                <input type="checkbox" id="maisVariedadeEventos" name="atividade" value="maisVariedadeEventos" onchange="nonEmpty(this)">
+                <label for="maisVariedadeEventos">Mais variedade de eventos</label>
+
+                <input type="checkbox" id="incentivos" name="atividade" value="incentivos" onchange="nonEmpty(this)">
+                <label for="incentivos">Incentivos (Ex: Horas de serviço comunitário)</label>
+
+                <input type="checkbox" id="outroAtividade" name="atividade" value="outroAtividade"  oninput="showText(this)" onchange="nonEmpty(this)">
+                <label for="outroAtividade">Outro (Especifique)</label>
+                <textarea id="atividadeText" name="atividadeText" class="hidden" placeholder="Digite sua resposta"></textarea>
+            
+            </div>
+
+            <div class="form-group">
+            
+                <legend>Qual é o seu meio preferido de comunicação sobre as atividades do grêmio? <p>* Obrigatório *</p> </legend>
+                <input type="radio" id="redesSociais" name="meio" value="redesSociais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <label for="redesSociais">Redes sociais</label>
+            
+                <input type="radio" id="email" name="meio" value="email" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <label for="email">E-mail</label>
+
+                <input type="radio" id="msgApps" name="meio" value="msgApps" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <label for="msgApps">Aplicativos de mensagens (Ex: WhatsApp)</label>
+
+                <input type="radio" id="murais" name="meio" value="murais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <label for="murais">Murais na escola</label>
+
+                <input type="radio" id="outroMeio" name="meio" value="outroMeio" onclick="showTextRadio(this)" onchange="nonEmpty(this)">
+                <label for="outroMeio">Outro (Especifique)</label>
+                <textarea id="meioText" name="meioText" class="hidden" placeholder="Digite sua resposta"></textarea>
+            
+            </div>
+
+            <div class="form-group">
+            
+                <legend>Você acha interessante a ideia de ter um baile de primavera como futuro evento, ou acredita que isso seria apenas uma perda de tempo de aula? <p>* Obrigatório *</p> </legend>
+                <input type="radio" id="simIdeia" name="baile" value="simIdeia" onchange="nonEmpty(this)">
+                <label for="simIdeia">Sim, acho uma boa ideia.</label>
+            
+                <input type="radio" id="naoIdeia" name="baile" value="naoIdeia" onchange="nonEmpty(this)">
+                <label for="naoIdeia">Não, seria perda do período de aula.</label>
+            
+            </div>
+
+            <div class="form-group">
+            
+                <legend>Você considera interessante a ideia de termos, uma vez por mês, uma reunião com todos os representantes para analisar
+                suas necessidades e discutir propostas? Essa seria uma forma de integrar os representantes ao grêmio. <p>* Obrigatório *</p> </legend>
+                <input type="radio" id="simReuniao" name="reuniao" value="simReuniao" onchange="nonEmpty(this)">
+                <label for="simReuniao">Sim</label>
+            
+                <input type="radio" id="naoReuniao" name="reuniao" value="naoReuniao" onchange="nonEmpty(this)">
+                <label for="naoReuniao">Não</label>
+            
+            </div>
+
+            <div class="form-group">
+                <label for="melhorias">Quais melhorias você gostaria que nós, do grêmio, fizéssemos na escola? <p class="opcional">* Opcional *</p> </label>
+                <textarea id="melhorias" name="melhorias" placeholder="Digite sua resposta"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="evento">Que tipo de evento você gostaria de ver promovido pelo grêmio no futuro? <p class="opcional">* Opcional *</p> </label>
+                <textarea id="evento" name="evento" placeholder="Digite sua resposta"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="acrescentar">Há algo mais que você gostaria de adicionar sobre o grêmio estudantil? <p class="opcional">* Opcional *</p> </label>
+                <textarea id="acrescentar" name="acrescentar" placeholder="Digite sua resposta"></textarea>
+            </div>
+
             <input type="submit" value="Enviar">
 
             <script>
-                function redirect() {
-                    setTimeout(function() {
-                        window.location.href = 'rise.html';
-                    }, 50);
-                    return true;
+
+                document.getElementById("pesquisaCampo").addEventListener("submit", function submitTest() {
+
+                    const ano = document.getElementById("ano");
+                    const curso = document.getElementById("curso");
+
+                    if (ano.value == null || ano.value == "" || ano.value == "select") {
+                        
+                        ano.classList.add("empty");
+
+                        event.preventDefault();
+
+                    }
+                    if (curso.value == null || curso.value == "" || curso.value == "select") {
+
+                        curso.classList.add("empty");
+
+                        event.preventDefault();
+
+                    }
+
+                    var questions = ["acoes", "temas", "comunicacao", "atividade", "meio", "baile", "reuniao"];
+                    var allAnswered = true;
+
+                    for (var i = 0; i < questions.length; i++) {
+
+                        var name = questions[i];
+
+                        var questionAnswer = document.querySelector(`input[name="${name}"]:checked`);
+
+                        if (questionAnswer == null || questionAnswer == "") {
+
+                            event.preventDefault();
+
+                            allAnswered = false;
+
+                            var missingList = document.querySelectorAll(`input[name="${name}"]`);
+
+                            missingList.forEach(element => {
+
+                                element.classList.add("empty");
+
+                            });
+
+                        }
+
+                    }
+
+                    if (allAnswered) {
+
+                        setTimeout(function () {
+                            window.location.href = 'rise.html';
+                        }, 50);
+
+                    }
+
+                }) 
+
+                function nonEmpty(element) {
+
+                    var name = element.name;
+
+                    var elements = new Array;
+
+                    elements = document.getElementsByName(name);
+
+                    elements.forEach(element => {
+
+                        element.classList.remove("empty");
+
+                    });                    
+
                 }
-                function selectInput() {
 
-                    const select = document.getElementById("ano");
-                    const submitSelect = document.getElementById("submitAno");
-                    
-                    var valueSelect = select.value;
+                function showText(element) {
 
-                    submitSelect.value = valueSelect;
+                    const inputName = element.name;
 
-                }
-                function acoesInput() {
+                    const textArea = document.getElementById(inputName + "Text");
 
-                    const select = document.getElementById("acoes");
-                    const submitSelect = document.getElementById("submitAcoes");
-
-                    var valueSelect = select.value;
-
-                    submitSelect.value = valueSelect;
+                    textArea.classList.toggle("hidden");
 
                 }
+
+                function showTextRadio(element) {
+
+                    const inputName = element.name;
+
+                    const textArea = document.getElementById(inputName + "Text");
+
+                    var textClass = textArea.getAttribute("class");
+
+                    if (textClass == "hidden") {
+
+                        textArea.classList.remove("hidden");
+
+                    }
+
+                }
+
+                function hideTextRadio(element) {
+
+                    const inputName = element.name;
+
+                    const textArea = document.getElementById(inputName + "Text");
+
+                    var textClass = textArea.getAttribute("class");
+
+                    if (textClass != "hidden") {
+
+                        textArea.classList.add("hidden");
+
+                    }
+
+                }
+
             </script>
         </form>
     </div>
