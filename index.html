@@ -11,7 +11,7 @@
     <div class="form-container">
         <form action="https://formspree.io/f/mpwpwwqn" method="POST" id="pesquisaCampo">
             <div class="form-group">
-            <label for="ano"> <legend>1 - Em qual ano você está?</legend> <p>Obrigatório*</p> </label>
+            <label for="ano"> <legend>1 - Em qual ano você está? <p>Obrigatório*</p></legend> </label>
                
                 <select id="ano" name="ano" onchange="nonEmpty(this)">
                     <option value="select">Selecione...</option>
@@ -22,7 +22,7 @@
 
             </div>
             <div class="form-group">
-                <label for="curso"><legend>2- Em qual curso você está?</legend> <p>Obrigatório*</p> </label>
+                <label for="curso"><legend>2- Em qual curso você está? <p>Obrigatório*</p></legend> </label>
                 <select id="curso" name="curso" onchange="nonEmpty(this)">
                     <option value="select">Selecione...</option>
                     <option value="dsem">Desenvolvimento de Sistemas</option>
@@ -37,72 +37,111 @@
             <div class="form-group">
 
                 <legend>3 - Como você avalia a importância das ações sociais promovidas pelo grêmio? <p>Obrigatório*</p> </legend>
+                    
+                    <div class="resposta">
                     <input type="radio" id="muitoImportante" name="acoes" value="muitoImportante" onchange="nonEmpty(this)">
-                    <label for="muitoImportante">Muito Importante</label>
+                    <label for="muitoImportante"> Muito Importante</label>
+                    </div> <br>
 
+                    <div class="resposta">
                     <input type="radio" id="importante" name="acoes" value="importante" onchange="nonEmpty(this)">
-                    <label for="importante">Importante</label>
+                    <label for="importante"> Importante</label>
+                    </div> <br>
 
+                    <div class="resposta">
                     <input type="radio" id="neutro" name="acoes" value="neutro" onchange="nonEmpty(this)">
-                    <label for="neutro">Neutro</label>
+                    <label for="neutro"> Neutro</label>
+                    </div> <br>
 
+                    <div class="resposta">
                     <input type="radio" id="poucoImportante" name="acoes" value="poucoImportante" onchange="nonEmpty(this)">
-                    <label for="poucoImportante">Pouco Importante</label>
+                    <label for="poucoImportante"> Pouco Importante</label>
+                    </div> <br>
 
+                    <div class="resposta">
                     <input type="radio" id="nadaImportante" name="acoes" value="nadaImportante" onchange="nonEmpty(this)">
-                    <label for="nadaImportante">Nada Importante</label>
+                    <label for="nadaImportante"> Nada Importante</label>
+                    </div> <br>
 
             </div>
 
             <div class="form-group">
             
                 <legend>4 - Quais temas você gostaria que a próxima gestão do grêmio abordasse? (Múltipla escolha) <p>Obrigatório*</p> </legend>
+                
+                <div class="resposta">
                 <input type="checkbox" id="educacao" name="temas" value="educacao" onchange="nonEmpty(this)">
-                <label for="educacao">Educação</label>
+                <label for="educacao"> Educação</label>
+                </div> <br>
             
+                <div class="resposta">
                 <input type="checkbox" id="meioAmbiente" name="temas" value="meioAmbiente" onchange="nonEmpty(this)">
-                <label for="meioAmbiente">Meio ambiente</label>
+                <label for="meioAmbiente"> Meio ambiente</label>
+                </div> <br>
             
+                <div class="resposta">
                 <input type="checkbox" id="cultura" name="temas" value="cultura" onchange="nonEmpty(this)">
-                <label for="cultura">Cultura</label>
+                <label for="cultura"> Cultura</label>
+                </div> <br>
             
+                <div class="resposta">
                 <input type="checkbox" id="esporte" name="temas" value="esporte" onchange="nonEmpty(this)">
-                <label for="esporte">Esporte</label>
-            
+                <label for="esporte"> Esporte</label>
+                </div> <br>
+                
+                <div class="resposta">
                 <input type="checkbox" id="saudeMental" name="temas" value="saudeMental" onchange="nonEmpty(this)">
-                <label for="saudeMental">Saúde Mental</label>
+                <label for="saudeMental"> Saúde Mental</label>
+                </div> <br>
 
+                <div class="resposta">
                 <input type="checkbox" id="outroTemas" name="temas" value="outroTemas" oninput="showText(this)" onchange="nonEmpty(this)">
-                <label for="outroTemas">Outro (Especifique)</label>
+                <label for="outroTemas"> Outro (Especifique)</label>
+                </div> <br>
                 <textarea id="temasText" name="temasText" class="hidden" placeholder="Digite sua resposta"></textarea>
             
             </div>
 
             <div class="form-group">
-            
+                
                 <legend>5 -Você se sentiria incentivado a participar mais ativamente se houvesse uma melhor comunicação das atividades do grêmio? <p>Obrigatório*</p> </legend>
+
+                <div class="resposta">
                 <input type="radio" id="simComunicacao" name="comunicacao" value="simComunicacao" onchange="nonEmpty(this)">
-                <label for="simComunicacao">Sim</label>
+                <label for="simComunicacao"> Sim</label>
+                </div> <br>
             
+                <div class="resposta">
                 <input type="radio" id="naoComunicacao" name="comunicacao" value="naoComunicacao" onchange="nonEmpty(this)">
-                <label for="naoComunicacao">Não</label>
+                <label for="naoComunicacao"> Não</label>
+                </div> <br>
             
             </div>
 
             <div class="form-group">
             
                 <legend>6 - O que motivaria você a participar mais ativamente das atividades do grêmio? (Múltipla escolha)<p>Obrigatório*</p> </legend>
+
+                <div class="resposta">
                 <input type="checkbox" id="melhorDivulgacao" name="atividade" value="melhorDivulgacao" onchange="nonEmpty(this)">
-                <label for="melhorDivulgacao">Melhor divulgação</label>
-            
+                <label for="melhorDivulgacao"> Melhor divulgação</label>
+                </div> <br>
+                
+                <div class="resposta">
                 <input type="checkbox" id="maiorVariedadeEventos" name="atividade" value="maiorVariedadeEventos" onchange="nonEmpty(this)">
-                <label for="maiorVariedadeEventos">Maior variedade de eventos</label>
+                <label for="maiorVariedadeEventos"> Maior variedade de eventos</label>
+                </div> <br>
 
+
+                <div class="resposta">
                 <input type="checkbox" id="incentivos" name="atividade" value="incentivos" onchange="nonEmpty(this)">
-                <label for="incentivos">Incentivos (Ex: Horas de serviço comunitário)</label>
+                <label for="incentivos"> Incentivos (Ex: Horas de serviço comunitário)</label>
+                </div> <br>
 
+                <div class="resposta">
                 <input type="checkbox" id="outroAtividade" name="atividade" value="outroAtividade"  oninput="showText(this)" onchange="nonEmpty(this)">
-                <label for="outroAtividade">Outro (Especifique)</label>
+                <label for="outroAtividade"> Outro (Especifique)</label>
+                </div>
                 <textarea id="atividadeText" name="atividadeText" class="hidden" placeholder="Digite sua resposta"></textarea>
             
             </div>
@@ -110,20 +149,31 @@
             <div class="form-group">
             
                 <legend>7 - Qual é o seu meio preferido de comunicação sobre as atividades do grêmio? <p>Obrigatório*</p> </legend>
+
+                <div class="resposta">
                 <input type="radio" id="redesSociais" name="meio" value="redesSociais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
-                <label for="redesSociais">Redes sociais</label>
-            
+                <label for="redesSociais"> Redes sociais</label>
+                </div> <br>
+
+                <div class="resposta">
                 <input type="radio" id="email" name="meio" value="email" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
-                <label for="email">E-mail</label>
+                <label for="email"> E-mail</label>
+                </div> <br>
 
+                <div class="resposta">
                 <input type="radio" id="msgApps" name="meio" value="msgApps" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
-                <label for="msgApps">Aplicativos de mensagens (Ex: WhatsApp)</label>
+                <label for="msgApps"> Aplicativos de mensagens (Ex: WhatsApp)</label>
+                </div> <br>
 
+                <div class="resposta">
                 <input type="radio" id="murais" name="meio" value="murais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
-                <label for="murais">Murais na escola</label>
+                <label for="murais"> Murais na escola</label>
+                </div> <br>
 
+                <div class="resposta">
                 <input type="radio" id="outroMeio" name="meio" value="outroMeio" onclick="showTextRadio(this)" onchange="nonEmpty(this)">
-                <label for="outroMeio">Outro (Especifique)</label>
+                <label for="outroMeio"> Outro (Especifique)</label>
+                </div> <br>
                 <textarea id="meioText" name="meioText" class="hidden" placeholder="Digite sua resposta"></textarea>
             
             </div>
@@ -131,11 +181,16 @@
             <div class="form-group">
             
                 <legend>8 - Você acha interessante a ideia de ter um baile de primavera como futuro evento, ou acredita que isso seria apenas uma perda de tempo de aula? <p>Obrigatório*</p> </legend>
+                
+                <div class="resposta">
                 <input type="radio" id="simIdeia" name="baile" value="simIdeia" onchange="nonEmpty(this)">
-                <label for="simIdeia">Sim, acho uma boa ideia.</label>
+                <label for="simIdeia"> Sim, acho uma boa ideia.</label>
+                </div> <br>
             
+                <div class="resposta">
                 <input type="radio" id="naoIdeia" name="baile" value="naoIdeia" onchange="nonEmpty(this)">
-                <label for="naoIdeia">Não, seria perda do período de aula.</label>
+                <label for="naoIdeia"> Não, seria perda do período de aula.</label>
+                </div> <br>
             
             </div>
 
@@ -143,11 +198,16 @@
             
                 <legend>9 - Você considera interessante a ideia de termos, uma vez por mês, uma reunião com todos os representantes para analisar
                 suas necessidades e discutir propostas? Essa seria uma forma de integrar os representantes ao grêmio. <p>Obrigatório*</p> </legend>
+                
+                <div class="resposta">
                 <input type="radio" id="simReuniao" name="reuniao" value="simReuniao" onchange="nonEmpty(this)">
-                <label for="simReuniao">Sim</label>
-            
+                <label for="simReuniao"> Sim</label>
+                </div> <br>
+                
+                <div class="resposta">
                 <input type="radio" id="naoReuniao" name="reuniao" value="naoReuniao" onchange="nonEmpty(this)">
-                <label for="naoReuniao">Não</label>
+                <label for="naoReuniao"> Não</label>
+                </div> <br>
             
             </div>
 

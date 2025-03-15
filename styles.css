@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 
-
 body {
     display: flex;
     flex-direction: column;
@@ -54,16 +53,24 @@ h2 {
 
 .form-group label, .form-group legend {
     display: block;
+    margin-top: 5px;
     margin-bottom: 5px;
     font-weight: 600;
-    color: #727272;
-    font-size: 14px;
+    color: #5d5d5d;
+    font-size: 14.5px;
+
+}
+
+.form-group label{
+
+    font-weight: 100;
 }
 
 .css-aditional label, .form-group legend {
     font-size: 18px;
     display: block;
     color: black;
+
 ;
 }
 
@@ -71,39 +78,29 @@ h2 {
 .form-group input {
     all: unset;
     border: 2px solid rgb(0, 0, 0);
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
+    margin-right: 3px ;
     display: inline-block;
 
 }
 
 .form-group input[type="radio"] {
     border-radius: 50%;
-    margin-top: 15px;
-    width: 22px;
-    height: 22px;
+    border-color: #5d5d5d ;
 }
+
 
 .form-group input[type="checkbox"] {
     border-radius: 25%;
-    margin-top: 15px;
-
-}
-
-.form-group input[type="checkbox"] {
-    border-radius: 25%;
-    margin-top: 15px;
-    width: 22px;
-    height: 22px;
+    border-color: #5d5d5d;
 }
 
 .form-group input:checked {
     background-color: #682784;
-    width: 22px;
-    height: 22px;
+    border-color: #000000
 }
 
-  
 
 .empty {
     border: 2px solid rgb(180, 0, 0) !important;
@@ -160,6 +157,12 @@ h2 {
     display: none;
 }
 
+.resposta{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display:inline-flex;    
+}
+
 input[type="submit"] {
     background-color: #51146b;
     color: white;
@@ -180,12 +183,12 @@ input[type="submit"]:hover {
 }
 
 label p, legend p {
-    color: rgb(255, 60, 0);
+    color: rgb(221, 53, 2);
 
 }
 
 .opcional {
-    color: #611dff;
+    color: #7135fd;
 }
 
 ::-webkit-scrollbar {
@@ -216,7 +219,7 @@ label p, legend p {
 
     .form-group label {
             font-size: 16px;
-            padding: 12px;
+
         }
 
     .css-aditional, .form-group input, .form-group textarea, .form-group legend {
@@ -238,7 +241,7 @@ label p, legend p {
 
         .form-group label {
             font-size: 16px;
-            padding: 12px;
+
         }
 
     .css-aditional, .form-group input, .form-group textarea, .form-group legend {
