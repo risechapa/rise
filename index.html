@@ -7,32 +7,33 @@
     <meta property="og:image" content="https://iili.io/3njuOJt.png" />
     <title>Pesquisa RISE</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
     <h2>Por favor, responda à nossa pequisa de campo abaixo:</h2>
     <h3>*A pesquisa de campo não faz parte da campanha de eleição da chapa <b>RISE</b>*</h3>
     <div class="form-container">
-        <form action="https://formspree.io/f/xzzezaqr" method="POST" id="pesquisaCampo">
+        <form id="pesquisaCampo">
             <div class="form-group">
             <label for="ano"> <legend>1 - Em qual ano você está? <p>Obrigatório*</p></legend> </label>
                
                 <select id="ano" name="ano" onchange="nonEmpty(this)">
-                    <option value="select">Selecione...</option>
-                    <option value="1">1º Ano</option>
-                    <option value="2">2º Ano</option>
-                    <option value="3">3º Ano</option>
+                    <option value="select" disabled selected>Selecione...</option>
+                    <option value="1ºano">1º Ano</option>
+                    <option value="2º Ano">2º Ano</option>
+                    <option value="3º Ano">3º Ano</option>
                 </select> 
 
             </div>
             <div class="form-group">
                 <label for="curso"><legend>2- Em qual curso você está? <p>Obrigatório*</p></legend> </label>
                 <select id="curso" name="curso" onchange="nonEmpty(this)">
-                    <option value="select">Selecione...</option>
-                    <option value="dsem">Desenvolvimento de Sistemas</option>
-                    <option value="lgem">Logística</option>
-                    <option value="ctem">Contabilidade</option>
-                    <option value="quem">Química</option>
-                    <option value="frem">Farmácia</option>
+                    <option value="select" disabled selected>Selecione...</option>
+                    <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                    <option value="Logística">Logística</option>
+                    <option value="Contabilidade">Contabilidade</option>
+                    <option value="Química">Química</option>
+                    <option value="Farmácia">Farmácia</option>
                 </select>
 
             </div>
@@ -42,27 +43,27 @@
                 <legend>3 - Como você avalia a importância das ações sociais promovidas pelo grêmio? <p>Obrigatório*</p> </legend>
                     
                     <div class="resposta">
-                    <input type="radio" id="muitoImportante" name="acoes" value="muitoImportante" onchange="nonEmpty(this)">
+                    <input type="radio" id="muitoImportante" name="acoes" value="Muito Importante" onchange="nonEmpty(this)">
                     <label for="muitoImportante"> Muito Importante</label>
                     </div> <br>
 
                     <div class="resposta">
-                    <input type="radio" id="importante" name="acoes" value="importante" onchange="nonEmpty(this)">
+                    <input type="radio" id="importante" name="acoes" value="Importante" onchange="nonEmpty(this)">
                     <label for="importante"> Importante</label>
                     </div> <br>
 
                     <div class="resposta">
-                    <input type="radio" id="neutro" name="acoes" value="neutro" onchange="nonEmpty(this)">
+                    <input type="radio" id="neutro" name="acoes" value="Neutro" onchange="nonEmpty(this)">
                     <label for="neutro"> Neutro</label>
                     </div> <br>
 
                     <div class="resposta">
-                    <input type="radio" id="poucoImportante" name="acoes" value="poucoImportante" onchange="nonEmpty(this)">
+                    <input type="radio" id="poucoImportante" name="acoes" value="Pouco Importante" onchange="nonEmpty(this)">
                     <label for="poucoImportante"> Pouco Importante</label>
                     </div> <br>
 
                     <div class="resposta">
-                    <input type="radio" id="nadaImportante" name="acoes" value="nadaImportante" onchange="nonEmpty(this)">
+                    <input type="radio" id="nadaImportante" name="acoes" value="Nada Importante" onchange="nonEmpty(this)">
                     <label for="nadaImportante"> Nada Importante</label>
                     </div> <br>
 
@@ -73,32 +74,32 @@
                 <legend>4 - Quais temas você gostaria que a próxima gestão do grêmio abordasse? (Múltipla escolha) <p>Obrigatório*</p> </legend>
                 
                 <div class="resposta">
-                <input type="checkbox" id="educacao" name="temas" value="educacao" onchange="nonEmpty(this)">
+                <input type="checkbox" id="educacao" name="temas" value="Educação" onchange="nonEmpty(this)">
                 <label for="educacao"> Educação</label>
                 </div> <br>
             
                 <div class="resposta">
-                <input type="checkbox" id="meioAmbiente" name="temas" value="meioAmbiente" onchange="nonEmpty(this)">
+                <input type="checkbox" id="meioAmbiente" name="temas" value="Meio ambiente" onchange="nonEmpty(this)">
                 <label for="meioAmbiente"> Meio ambiente</label>
                 </div> <br>
             
                 <div class="resposta">
-                <input type="checkbox" id="cultura" name="temas" value="cultura" onchange="nonEmpty(this)">
+                <input type="checkbox" id="cultura" name="temas" value="Cultura" onchange="nonEmpty(this)">
                 <label for="cultura"> Cultura</label>
                 </div> <br>
             
                 <div class="resposta">
-                <input type="checkbox" id="esporte" name="temas" value="esporte" onchange="nonEmpty(this)">
+                <input type="checkbox" id="esporte" name="temas" value="Esporte" onchange="nonEmpty(this)">
                 <label for="esporte"> Esporte</label>
                 </div> <br>
                 
                 <div class="resposta">
-                <input type="checkbox" id="saudeMental" name="temas" value="saudeMental" onchange="nonEmpty(this)">
+                <input type="checkbox" id="saudeMental" name="temas" value="Saúde Mental" onchange="nonEmpty(this)">
                 <label for="saudeMental"> Saúde Mental</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="checkbox" id="outroTemas" name="temas" value="outroTemas" oninput="showText(this)" onchange="nonEmpty(this)">
+                <input type="checkbox" id="outroTemas" name="temas" value="Outro" oninput="showText(this)" onchange="nonEmpty(this)">
                 <label for="outroTemas"> Outro (Especifique)</label>
                 </div> <br>
                 <textarea id="temasText" name="temasText" class="hidden" placeholder="Digite sua resposta"></textarea>
@@ -110,12 +111,12 @@
                 <legend>5 -Você se sentiria incentivado a participar mais ativamente se houvesse uma melhor comunicação das atividades do grêmio? <p>Obrigatório*</p> </legend>
 
                 <div class="resposta">
-                <input type="radio" id="simComunicacao" name="comunicacao" value="simComunicacao" onchange="nonEmpty(this)">
+                <input type="radio" id="simComunicacao" name="comunicacao" value="Sim" onchange="nonEmpty(this)">
                 <label for="simComunicacao"> Sim</label>
                 </div> <br>
             
                 <div class="resposta">
-                <input type="radio" id="naoComunicacao" name="comunicacao" value="naoComunicacao" onchange="nonEmpty(this)">
+                <input type="radio" id="naoComunicacao" name="comunicacao" value="Não" onchange="nonEmpty(this)">
                 <label for="naoComunicacao"> Não</label>
                 </div> <br>
             
@@ -126,23 +127,23 @@
                 <legend>6 - O que motivaria você a participar mais ativamente das atividades do grêmio? (Múltipla escolha)<p>Obrigatório*</p> </legend>
 
                 <div class="resposta">
-                <input type="checkbox" id="melhorDivulgacao" name="atividade" value="melhorDivulgacao" onchange="nonEmpty(this)">
+                <input type="checkbox" id="melhorDivulgacao" name="atividade" value="Melhor divulgação" onchange="nonEmpty(this)">
                 <label for="melhorDivulgacao"> Melhor divulgação</label>
                 </div> <br>
                 
                 <div class="resposta">
-                <input type="checkbox" id="maiorVariedadeEventos" name="atividade" value="maiorVariedadeEventos" onchange="nonEmpty(this)">
+                <input type="checkbox" id="maiorVariedadeEventos" name="atividade" value="Maior variedade de eventos" onchange="nonEmpty(this)">
                 <label for="maiorVariedadeEventos"> Maior variedade de eventos</label>
                 </div> <br>
 
 
                 <div class="resposta">
-                <input type="checkbox" id="incentivos" name="atividade" value="incentivos" onchange="nonEmpty(this)">
+                <input type="checkbox" id="incentivos" name="atividade" value="Incentivos" onchange="nonEmpty(this)">
                 <label for="incentivos"> Incentivos (Ex: Horas de serviço comunitário)</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="checkbox" id="outroAtividade" name="atividade" value="outroAtividade"  oninput="showText(this)" onchange="nonEmpty(this)">
+                <input type="checkbox" id="outroAtividade" name="atividade" value="Outro"  oninput="showText(this)" onchange="nonEmpty(this)">
                 <label for="outroAtividade"> Outro (Especifique)</label>
                 </div>
                 <textarea id="atividadeText" name="atividadeText" class="hidden" placeholder="Digite sua resposta"></textarea>
@@ -154,27 +155,27 @@
                 <legend>7 - Qual é o seu meio preferido de comunicação sobre as atividades do grêmio? <p>Obrigatório*</p> </legend>
 
                 <div class="resposta">
-                <input type="radio" id="redesSociais" name="meio" value="redesSociais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <input type="radio" id="redesSociais" name="meio" value="Redes sociais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
                 <label for="redesSociais"> Redes sociais</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="radio" id="email" name="meio" value="email" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <input type="radio" id="email" name="meio" value="E-mail" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
                 <label for="email"> E-mail</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="radio" id="msgApps" name="meio" value="msgApps" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <input type="radio" id="msgApps" name="meio" value="Aplicativos de mensagens" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
                 <label for="msgApps"> Aplicativos de mensagens (Ex: WhatsApp)</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="radio" id="murais" name="meio" value="murais" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
+                <input type="radio" id="murais" name="meio" value="Murais na escola" onclick="hideTextRadio(this)" onchange="nonEmpty(this)">
                 <label for="murais"> Murais na escola</label>
                 </div> <br>
 
                 <div class="resposta">
-                <input type="radio" id="outroMeio" name="meio" value="outroMeio" onclick="showTextRadio(this)" onchange="nonEmpty(this)">
+                <input type="radio" id="outroMeio" name="meio" value="Outro" onclick="showTextRadio(this)" onchange="nonEmpty(this)">
                 <label for="outroMeio"> Outro (Especifique)</label>
                 </div> <br>
                 <textarea id="meioText" name="meioText" class="hidden" placeholder="Digite sua resposta"></textarea>
@@ -186,13 +187,13 @@
                 <legend>8 - Você acha interessante a ideia de ter um baile de primavera como futuro evento, ou acredita que isso seria apenas uma perda de tempo de aula? <p>Obrigatório*</p> </legend>
                 
                 <div class="resposta">
-                <input type="radio" id="simIdeia" name="baile" value="simIdeia" onchange="nonEmpty(this)">
-                <label for="simIdeia"> Sim, acho uma boa ideia.</label>
+                <input type="radio" id="simIdeia" name="baile" value="Sim, acho uma boa ideia" onchange="nonEmpty(this)">
+                <label for="simIdeia"> Sim, acho uma boa ideia</label>
                 </div> <br>
             
                 <div class="resposta">
-                <input type="radio" id="naoIdeia" name="baile" value="naoIdeia" onchange="nonEmpty(this)">
-                <label for="naoIdeia"> Não, seria perda do período de aula.</label>
+                <input type="radio" id="naoIdeia" name="baile" value="Não, seria perda do período de aula" onchange="nonEmpty(this)">
+                <label for="naoIdeia"> Não, seria perda do período de aula</label>
                 </div> <br>
             
             </div>
@@ -203,12 +204,12 @@
                 suas necessidades e discutir propostas? Essa seria uma forma de integrar os representantes ao grêmio. <p>Obrigatório*</p> </legend>
                 
                 <div class="resposta">
-                <input type="radio" id="simReuniao" name="reuniao" value="simReuniao" onchange="nonEmpty(this)">
+                <input type="radio" id="simReuniao" name="reuniao" value="Sim" onchange="nonEmpty(this)">
                 <label for="simReuniao"> Sim</label>
                 </div> <br>
                 
                 <div class="resposta">
-                <input type="radio" id="naoReuniao" name="reuniao" value="naoReuniao" onchange="nonEmpty(this)">
+                <input type="radio" id="naoReuniao" name="reuniao" value="Não" onchange="nonEmpty(this)">
                 <label for="naoReuniao"> Não</label>
                 </div> <br>
             
@@ -229,32 +230,50 @@
                 <textarea id="acrescentar" name="acrescentar" placeholder="Digite sua resposta"></textarea>
             </div>
 
+            <p id="aviso" class="hidden">*Por favor, preencha todos os campos obrigatórios!*</p>
+
             <input type="submit" value="Enviar">
 
             <script>
 
+                emailjs.init("UwZz4i-VJt6Xr0CCw");
+
                 document.getElementById("pesquisaCampo").addEventListener("submit", function submitTest() {
+
+                    event.preventDefault();
 
                     const ano = document.getElementById("ano");
                     const curso = document.getElementById("curso");
+
+                    const aviso = document.getElementById("aviso");
+
+                    var allAnswered = true;
 
                     if (ano.value == null || ano.value == "" || ano.value == "select") {
                         
                         ano.classList.add("empty");
 
+                        aviso.classList.remove("hidden");
+
                         event.preventDefault();
+
+                        allAnswered = false;
 
                     }
                     if (curso.value == null || curso.value == "" || curso.value == "select") {
 
                         curso.classList.add("empty");
 
+                        aviso.classList.remove("hidden");
+
                         event.preventDefault();
+
+                        allAnswered = false;
 
                     }
 
                     var questions = ["acoes", "temas", "comunicacao", "atividade", "meio", "baile", "reuniao"];
-                    var allAnswered = true;
+                    
 
                     for (var i = 0; i < questions.length; i++) {
 
@@ -263,6 +282,8 @@
                         var questionAnswer = document.querySelector(`input[name="${name}"]:checked`);
 
                         if (questionAnswer == null || questionAnswer == "") {
+
+                            aviso.classList.remove("hidden");
 
                             event.preventDefault();
 
@@ -281,6 +302,21 @@
                     }
 
                     if (allAnswered) {
+
+                        aviso.classList.add("hidden");
+
+                        event.preventDefault();
+
+                        const serviceID = "service_hgmxgub";
+                        const templateID = "template_9xwak81";
+
+                        emailjs.sendForm(serviceID, templateID, this)
+                            .then(() => {
+                                console.log("Mensagem enviada com sucesso!");
+                            }, (erro) => {
+                                console.error("Erro ao enviar:", erro);
+                                console.log("Erro ao enviar a mensagem. Tente novamente.");
+                            });
 
                         setTimeout(function () {
                             window.location.href = 'rise.html';

@@ -195,6 +195,11 @@ label p, legend p {
     color: #7135fd;
 }
 
+#aviso {
+    color: rgb(221, 53, 2);
+    text-align: center;
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }
