@@ -241,6 +241,9 @@ textarea {
         font-size: 18px;
 
     }
+    .grande {
+        width: 70%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -260,9 +263,12 @@ textarea {
         }
 
     .css-aditional, .form-group input, .form-group textarea, .form-group legend {
-    font-size: 18px;
+        font-size: 18px;
 
-}
+    }
+    .grande {
+        width: 70%;
+    }
 }
 
 
