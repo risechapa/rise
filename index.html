@@ -381,7 +381,7 @@
                         const serviceID = "service_hgmxgub";
                         const templateID = "template_9xwak81";
 
-                        emailjs.sendForm('service_id', 'template_id', this)
+                        emailjs.sendForm(serviceID, templateID, this)
                             .then(function (response) {
                                 console.log('SUCCESS!', response.status, response.text);
                                 gtag('event', 'form_submission', {
