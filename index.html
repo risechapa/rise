@@ -216,13 +216,73 @@
             </div>
 
             <div class="form-group">
-                <label for="melhorias"><legend>10 - Quais melhorias você gostaria o grêmio fizesse na escola? </legend> <p class="opcional">Opcional*</p> </label>
-                <textarea id="melhorias" name="melhorias" placeholder="Digite sua resposta"></textarea>
+            
+                <legend>10 - Quais melhorias você gostaria o grêmio fizesse na escola? <p>Obrigatório*</p> </legend>
+                
+                <div class="resposta">
+                    <input type="checkbox" id="espacosEscola" name="melhorias" value="Melhoria em espaços da escola" onchange="nonEmpty(this)">
+                    <label for="espacosEscola"> Melhoria em espaços da escola</label>
+                </div> <br>
+                
+                <div class="resposta">
+                    <input type="checkbox" id="comunicacaoAlunosProfessores" name="melhorias" value="Melhoria na comunicação entre alunos e professores" onchange="nonEmpty(this)">
+                    <label for="comunicacaoAlunosProfessores"> Melhoria na comunicação entre alunos e professores (Reuniões, sugestões, etc.)</label>
+                </div> <br>
+                
+                <div class="resposta">
+                    <input type="checkbox" id="atividadesCulturais" name="melhorias" value="Atividades culturais" onchange="nonEmpty(this)">
+                    <label for="atividadesCulturais"> Atividades culturais (Exposição artística)</label>
+                </div> <br>
+
+                <div class="resposta">
+                    <input type="checkbox" id="campanhasConscientizacao" name="melhorias" value="Campanhas de conscientização" onchange="nonEmpty(this)">
+                    <label for="campanhasConscientizacao"> Campanhas de conscientização (Meio ambiente, saúde mental, bullying e inclusão)</label>
+                </div> <br>
+                
+                <div class="resposta">
+                    <input type="checkbox" id="outroMelhorias" name="melhorias" value="Outro" oninput="showText(this)" onchange="nonEmpty(this)">
+                    <label for="outroMelhorias"> Outro (Especifique)</label>
+                </div>
+                <textarea id="melhoriasText" name="melhoriasText" class="hidden" placeholder="Digite sua resposta"></textarea>
+            
             </div>
 
             <div class="form-group">
-                <label for="evento"><legend>11 - Que tipo de evento você gostaria de ver promovido pelo grêmio no futuro? </legend><p class="opcional">Opcional*</p> </label>
-                <textarea id="evento" name="evento" placeholder="Digite sua resposta"></textarea>
+            
+                <legend>11 - Que tipo de evento você gostaria de ver promovido pelo grêmio no futuro? <p>Obrigatório*</p>
+                </legend>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="festasTematicas" name="evento" value="Festas temáticas" onchange="nonEmpty(this)">
+                    <label for="festasTematicas"> Festas temáticas (Festa Junina, Carnaval, Halloween)</label>
+                </div> <br>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="eventosEsportivos" name="evento" value="Eventos esportivos entre turmas ou séries" onchange="nonEmpty(this)">
+                    <label for="eventosEsportivos"> Eventos esportivos entre turmas ou séries</label>
+                </div> <br>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="palestrasWorkshops" name="evento" value="Palestras e workshops com profissionais de diversas áreas" onchange="nonEmpty(this)">
+                    <label for="palestrasWorkshops"> Palestras e workshops com profissionais de diversas áreas</label>
+                </div> <br>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="concursosTalentos" name="evento" value="Concursos de talentos (Música, dança, teatro)" onchange="nonEmpty(this)">
+                    <label for="concursosTalentos"> Concursos de talentos (Música, dança, teatro)</label>
+                </div> <br>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="eventosIntegracao" name="evento" value="Eventos de integração" onchange="nonEmpty(this)">
+                    <label for="eventosIntegracao"> Eventos de integração</label>
+                </div> <br>
+            
+                <div class="resposta">
+                    <input type="checkbox" id="outroEvento" name="evento" value="Outro" oninput="showText(this)" onchange="nonEmpty(this)">
+                    <label for="outroEvento"> Outro (Especifique)</label>
+                </div>
+                <textarea id="eventoText" name="eventoText" class="hidden" placeholder="Digite sua resposta"></textarea>
+            
             </div>
 
             <div class="form-group">
@@ -272,7 +332,7 @@
 
                     }
 
-                    var questions = ["acoes", "temas", "comunicacao", "atividade", "meio", "baile", "reuniao"];
+                    var questions = ["acoes", "temas", "comunicacao", "atividade", "meio", "baile", "reuniao", "melhorias", "evento"];
                     
 
                     for (var i = 0; i < questions.length; i++) {
