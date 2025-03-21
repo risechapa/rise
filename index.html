@@ -10,16 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-799CN9BLG1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-799CN9BLG1');
-</script>
-
 <body>
     <h2>Por favor, responda à nossa pequisa de campo abaixo:</h2>
     <h3>*A pesquisa de campo não faz parte da campanha de eleição da chapa <b>RISE</b>*</h3>
@@ -303,11 +293,27 @@
 
             <p id="aviso" class="hidden">*Por favor, preencha todos os campos obrigatórios!*</p>
 
-            <input type="submit" value="Enviar">
+            <button type="submit" id="buttonSubmit" value="submit">
+                Enviar
+            </button>
 
             <script>
 
                 emailjs.init("UwZz4i-VJt6Xr0CCw");
+
+                const button = document.getElementById("buttonSubmit");
+
+                const addLoading = () => {
+
+                    button.innerHTML = '<img src="./loading.png" class="loading">';
+
+                }
+
+                const removeLoading = () => {
+
+                    button.innerHTML = 'Enviar';
+
+                }
 
                 document.getElementById("pesquisaCampo").addEventListener("submit", function submitTest() {
 
@@ -321,23 +327,23 @@
                     var allAnswered = true;
 
                     if (ano.value == null || ano.value == "" || ano.value == "select") {
-                        
+
+                        event.preventDefault();
+
                         ano.classList.add("empty");
 
                         aviso.classList.remove("hidden");
-
-                        event.preventDefault();
 
                         allAnswered = false;
 
                     }
                     if (curso.value == null || curso.value == "" || curso.value == "select") {
 
+                        event.preventDefault();
+
                         curso.classList.add("empty");
 
                         aviso.classList.remove("hidden");
-
-                        event.preventDefault();
 
                         allAnswered = false;
 
@@ -354,9 +360,9 @@
 
                         if (questionAnswer == null || questionAnswer == "") {
 
-                            aviso.classList.remove("hidden");
-
                             event.preventDefault();
+
+                            aviso.classList.remove("hidden");
 
                             allAnswered = false;
 
@@ -374,31 +380,76 @@
 
                     if (allAnswered) {
 
+                        event.preventDefault();
+
                         aviso.classList.add("hidden");
 
-                        event.preventDefault();
+                        addLoading();
 
                         const serviceID = "service_hgmxgub";
                         const templateID = "template_9xwak81";
 
+                        const anoValue = document.getElementById('ano').value;
+                        const cursoValue = document.getElementById('curso').value;
+
+                        const temasValueText = document.getElementById('temasText').value;
+                        const atividadeValueText = document.getElementById('atividadeText').value;
+                        const meioValueText = document.getElementById('meioText').value;
+                        const melhoriasValueText = document.getElementById('melhoriasText').value;
+
+                        const acrescentarValue = document.getElementById('acrescentar').value;
+
+                        var valores = [];
+
+                        for (var i = 0; i < questions.length; i++) {
+                            
+                            var name = questions[i];
+                            
+                            var radios = document.querySelectorAll(`input[type="radio"][name="${name}"]`);
+                            radios.forEach(radio => {
+                                if (radio.checked) {
+                                    valores.push(radio.id);
+                                }
+                            });
+                            
+                            var valoresCheckbox = [];
+                            var checkboxes = document.querySelectorAll(`input[type="checkbox"][name="${name}"]`);
+                            checkboxes.forEach(checkbox => {
+                                if (checkbox.checked) {
+                                    valoresCheckbox.push(checkbox.id);
+                                }
+                            });
+
+                            if (valoresCheckbox.length > 0) {
+                                valores.push(valoresCheckbox);
+                            }
+
+                        }
+
+                        var [acoes, temas, comunicacao, atividade, meio, baile, reuniao, melhorias, evento] = valores;
+
                         emailjs.sendForm(serviceID, templateID, this)
                             .then(function (response) {
                                 console.log('SUCCESS!', response.status, response.text);
-                                gtag('event', 'form_submission', {
-                                    'event_category': 'EmailJS',
-                                    'event_label': 'Formulário Enviado'
+
+                                fetch('https://api.sheetmonkey.io/form/beUKu7g9tvTGPUARMXMRQX', {
+
+                                    method: 'post',
+                                    headers: {
+                                        'Accept': 'application/json',
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({ acoes, temas, comunicacao, atividade, meio, baile, reuniao, melhorias, evento }),
+
                                 });
+
                             }, function (error) {
                                 console.log('FAILED...', error);
-                            });
-
-                        setTimeout(function () {
-                            window.location.href = 'rise.html';
-                        }, 50);
-
+                            })
+                    
                     }
 
-                }) 
+                });
 
                 function nonEmpty(element) {
 
