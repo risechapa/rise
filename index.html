@@ -442,12 +442,7 @@
                                     },
                                     body: JSON.stringify({ Questão1: anoValue, Questão2: cursoValue, Questão3: acoes, Questão4: temas, Questão4Texto: temasValueText, Questão5: comunicacao, Questão6: atividade, Questão6Texto: atividadeValueText, Questão7: meio, Questão7Texto: meioValueText, Questão8: baile, Questão9: reuniao, Questão10: melhorias, Questão10Texto: melhoriasValueText, Questão11: evento, Questão11Texto: eventoValueText, Questão12Texto: acrescentarValue }),
 
-                                });
-
-                            }, function (error) {
-                                console.log('FAILED...', error);
-                            })
-                                .then(function redirect() {
+                                }).then(function redirect() {
 
                                     removeLoadin();
 
@@ -456,6 +451,10 @@
                                     }, 50);
 
                                 });
+
+                            }, function (error) {
+                                console.log('FAILED...', error);
+                            });
                     
                     }
 
