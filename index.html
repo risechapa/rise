@@ -389,15 +389,16 @@
                         const serviceID = "service_hgmxgub";
                         const templateID = "template_9xwak81";
 
-                        const anoValue = document.getElementById('ano').value;
-                        const cursoValue = document.getElementById('curso').value;
+                        var anoValue = document.getElementById('ano').value;
+                        var cursoValue = document.getElementById('curso').value;
 
-                        const temasValueText = document.getElementById('temasText').value;
-                        const atividadeValueText = document.getElementById('atividadeText').value;
-                        const meioValueText = document.getElementById('meioText').value;
-                        const melhoriasValueText = document.getElementById('melhoriasText').value;
+                        var temasValueText = document.getElementById('temasText').value;
+                        var atividadeValueText = document.getElementById('atividadeText').value;
+                        var meioValueText = document.getElementById('meioText').value;
+                        var melhoriasValueText = document.getElementById('melhoriasText').value;
+                        var eventoValueText = document.getElementById('eventoText').value;
 
-                        const acrescentarValue = document.getElementById('acrescentar').value;
+                        var acrescentarValue = document.getElementById('acrescentar').value;
 
                         var valores = [];
 
@@ -439,7 +440,7 @@
                                         'Accept': 'application/json',
                                         'Content-Type': 'application/json',
                                     },
-                                    body: JSON.stringify({ acoes, temas, comunicacao, atividade, meio, baile, reuniao, melhorias, evento }),
+                                    body: JSON.stringify({ Questão1: anoValue, Questão2: cursoValue, Questão3: acoes, Questão4: temas, Questão4Texto: temasValueText, Questão5: comunicacao, Questão6: atividade, Questão6Texto: atividadeValueText, Questão7: meio, Questão8: baile, Questão9: reuniao, Questão10: melhorias, Questão10Texto: melhoriasValueText, Questão11: evento, Questão11Texto: eventoValueText }),
 
                                 });
 
