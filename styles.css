@@ -226,7 +226,7 @@ textarea {
 .loading {
     margin: 0;
     width: 7.1%;
-    height: auto;
+    height: 100%;
     animation: spin 1s infinite linear;
 }
 
@@ -263,6 +263,9 @@ textarea {
     }
     .grande {
         width: 70%;
+    }
+    .loading {
+        width: 6%;
     }
 }
 
