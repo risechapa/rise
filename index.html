@@ -447,6 +447,15 @@
                             }, function (error) {
                                 console.log('FAILED...', error);
                             })
+                                .then(function redirect() {
+
+                                    removeLoadin();
+
+                                    setTimeout(function () {
+                                        window.location.href = 'rise.html';
+                                    }, 50);
+
+                                });
                     
                     }
 
