@@ -287,13 +287,6 @@ textarea {
     }
 }
 
-
-.image-container {
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    width: 100%;
-}
-
 img {
     max-width: 100%;    /* Não ultrapassa o container */
     width: 30vw;        /* Largura inicial em viewport width */
@@ -310,14 +303,33 @@ img {
 
 @media screen and (max-width: 480px) {  /* Smartphones */
     img {
-        width: 80vw;    /* Largura maior em telas pequenas */
-        height: 80vh;   /* Altura em viewport height */
+        width: 70vw;    /* Largura maior em telas pequenas */
+        height: 50vh;   /* Altura em viewport height */
     }
 }
 
 @media screen and (max-width: 320px) {  /* Telas muito pequenas */
     img {
-        width: 90vw;    /* Quase a largura total */
-        height: 70vh;
+        width: 100vw;    /* Quase a largura total */
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 230px) {  /* Telas muito pequenas */
+    img {
+        width: 100vw;    /* Quase a largura total */
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 180px) {  /* Telas muito pequenas */
+    img {
+        margin-top: 60%;
+        width: 100vw;    /* Quase a largura total */
+        height: 20vh;
+    }
+    h2 {
+        margin-top: 30%;
+        font-size: 100%;
     }
 }
